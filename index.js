@@ -22,20 +22,16 @@ function addCoupan() {
     getInput();
   }
   else{
-    var val = readlineSync.question('Enter value of coupan (', cpn , ') : ');
+    var val = readlineSync.question('Enter value of coupan : ', cpn);
     coupans.push({ cpn : val });
   }
   getInput();
-}
+}4
 
 function deleteCoupan(){
   var cpn = readlineSync.question('Enter coupan to be deleted : ');
-  if(check(cpn)){
-    for(let i=0; i< coupans.length; i++){
-      if(Object.keys(coupans[i])[0]==cpn){
-        
-      }
-    }  
+  if(check(cpn)){  
+    coupans = coupans.filter(item => Object.keys(item)[0]!=cpn);
   }
   else{
     console.log("This coupan is not present in database.");
@@ -72,7 +68,7 @@ function viewCoupan(){
 
 //welcome and start
 var userName = readlineSync.question('Enter your name : ');
-console.log(chalk.blue.bgRed.bold('Welcome! ' + userName + '.'));
+console.log('Welcome! ' + userName + '.');
 var choice;
 
 function getInput(){
