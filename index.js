@@ -107,6 +107,5 @@ getInput();
 
 //rewrite scores.json
 fs.writeFile('coupans.json', JSON.stringify(coupans), err => {
-
 });
 
